@@ -1,0 +1,21 @@
+{
+  "name": "bun-native-sql",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "dev": "bun --watch src/index.ts"
+  },
+  "devDependencies": {
+    "@types/bun": "^1.2.2",
+    "drizzle-kit": "^0.30.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "drizzle-orm": "^0.39.3",
+    "hono": "^4.7.2",
+    "postgres": "^3.4.5",
+    "redis": "^4.7.0"
+  }
+}

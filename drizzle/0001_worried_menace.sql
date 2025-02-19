@@ -1,0 +1,1 @@
+ALTER TABLE "s1"."objects" RENAME TO "partners";
