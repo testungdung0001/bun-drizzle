@@ -1,0 +1,1 @@
+ALTER TABLE "items" ADD COLUMN "name2" text NOT NULL;

@@ -1,0 +1,32 @@
+services:
+
+  db:
+    image: timescale/timescaledb:latest-pg17
+    restart: always
+    # set shared memory limit when using docker-compose
+    shm_size: 256mb
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: password
+
+  adminer:
+    image: xerno/adminerneo
+    restart: always
+    ports:
+      - 8080:8080
+  rediss:
+    image: redis:alpine
+    restart: always
+    hostname: redis
+    ports:
+      - 6379:6379
+  redis-commander:
+    hostname: redis-commander
+    image: ghcr.io/joeferner/redis-commander:latest
+    restart: always
+    environment:
+      - REDIS_HOSTS=local:redis:6379
+    ports:
+      - "8081:8081"
+    user: redis
