@@ -34,3 +34,19 @@ export const carsTable = defaultSchema.table("cars", {
 export type SelectCar = typeof carsTable.$inferSelect;
 export type InsertCar = typeof carsTable.$inferInsert;
 
+export const trailersTable = defaultSchema.table("trailers", {
+  trailer_id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  trailer_num: varchar({ length: 255 }).notNull(),
+  type: partnerTypeEnum().notNull(),
+});
+export type SelectTrailer = typeof trailersTable.$inferSelect;
+export type InsertTrailer = typeof trailersTable.$inferInsert;
+
+export const positionsTable = defaultSchema.table("positions", {
+  trailer_id: integer().primaryKey().generatedAlwaysAsIdentity(),
+  trailer_num: varchar({ length: 255 }).notNull(),
+  type: partnerTypeEnum().notNull(),
+});
+export type SelectPosition = typeof positionsTable.$inferSelect;
+export type InsertPosition = typeof positionsTable.$inferInsert;
+
